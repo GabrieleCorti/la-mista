@@ -1,0 +1,321 @@
+/* font */
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-light-italic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-medium-italic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "chairdrobe-rounded";
+  src: url("../static/font/chairdrobe-rounded-bold-italic.otf")
+    format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables */
+:root {
+  --primary-bg: rgb(255, 255, 1);
+  --base-p: 2rem;
+  --base-m: 2rem;
+}
+
+/* sections */
+body {
+  background-color: var(--primary-bg);
+  font-family: "chairdrobe-rounded";
+}
+
+header {
+  padding: 0 var(--base-p);
+}
+
+section {
+  margin-bottom: calc(var(--base-m) * 2);
+}
+
+#interlude {
+  overflow: hidden;
+  position: relative;
+  /* clip-path: polygon(0 40%, 100% 11%, 100% 70%, 0 99%); */
+  /* clip-path: polygon(0 50%, 100% 0, 100% 50%, 0 99%); */
+  clip-path: polygon(0 25%, 100% 0, 100% 50%, 0 75%);
+}
+
+/*  */
+.main-title {
+  font-size: 150px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.info-section {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.--dark {
+  background-color: black;
+  color: var(--primary-bg);
+}
+
+.info-section__title {
+  font-size: 100px;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: var(--base-p);
+}
+.info-section__content-container {
+  padding: 0 var(--base-p);
+  width: 100%;
+}
+
+.info-section__content-container__content {
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.info-section__content-container__player-list {
+  width: 100%;
+}
+
+.info-section__content-container__player,
+.info-section__content-container__contestant {
+  padding: var(--base-p);
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-section__content-container__player:last-child {
+  border-bottom: 0px;
+}
+
+.info-section__content-container__player,
+.info-section__content-container__contestant,
+.info-section__content-container__event-info,
+.loop-container__item {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.info-section__content-container__event-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-info__date,
+.event-info__location {
+  padding: var(--base-p);
+}
+
+.event-info__date {
+  border-right: 1px solid black;
+  width: 30%;
+}
+.contacts {
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.contacts__team-name,
+.contacts__training-location,
+.contacts__training-social {
+  text-align: center;
+  color: black;
+  font-size: 100px;
+  background-color: var(--primary-bg);
+  clip-path: polygon(4% 0, 100% 0%, 97% 100%, 0% 100%);
+}
+
+.contacts__team-name {
+  width: 30%;
+}
+.contacts__training-location {
+  width: 100%;
+  font-size: 60px;
+}
+
+.contacts__training-social {
+  width: 30%;
+  height: 65px;
+  font-size: 60px;
+}
