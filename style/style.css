@@ -158,7 +158,8 @@ body {
   line-height: 1;
 }
 ol,
-ul {
+ul,
+menu {
   list-style: none;
 }
 blockquote,
@@ -191,8 +192,11 @@ table {
 
 /* sections */
 body {
+  height: 100vh;
+  overflow: hidden;
   background-color: var(--primary-bg);
   font-family: "chairdrobe-rounded";
+  display: flex;
 }
 
 header {
@@ -201,6 +205,35 @@ header {
 
 section {
   margin-bottom: calc(var(--base-m) * 2);
+}
+
+menu {
+  width: 40%;
+  transform: translateX(100%);
+  transition: all 0.35s ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.menu__ornament {
+  background-color: black;
+  width: 1px;
+  height: 100%;
+  transition: all 0.700s ease-out;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+#menu[data-visible="visible"] > .menu__ornament {
+  transform: scaleY(1);
+}
+body:has([data-visible="visible"]) > menu {
+  transform: translateX(0%);
+}
+body:has([data-visible="visible"]) > .content {
+  transform: translateX(-40%);
 }
 
 #interlude {
@@ -212,6 +245,14 @@ section {
 }
 
 /*  */
+.content {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  transition: all 0.35s ease-out;
+}
+
 .main-title {
   font-size: 150px;
   font-weight: 300;
@@ -318,4 +359,11 @@ section {
   width: 30%;
   height: 65px;
   font-size: 60px;
+}
+
+.menu-button {
+  position: absolute;
+  top: 2%;
+  left: 90%;
+  z-index: 100;
 }

@@ -19,9 +19,10 @@ class LoopingText {
     this.events();
     this.render();
   }
+  scrollingElement = document.querySelector(".content");
 
   events() {
-    window.addEventListener(
+    this.scrollingElement.addEventListener(
       "scroll",
       () => (this.lerp.target += this.speed * 5)
     );
@@ -50,6 +51,13 @@ class LoopingText {
   }
 }
 
+const button = document.querySelector(".menu-button");
+button.addEventListener("click", () => {
+  const menu = document.querySelector("menu");
+  const newValue = menu.dataset.visible === "hidden" ? "visible" : "hidden";
+  menu.dataset.visible = newValue;
+});
+
 function shuffleArray(origianlArray) {
   const array = [...origianlArray];
   for (let i = array.length - 1; i > 0; i--) {
@@ -70,6 +78,7 @@ const players = [
   "Stefania Casiraghi",
   "Eleonora Dusi",
   "Gaia Sartor",
+  "Samuele Perego",
 ];
 
 const scroller = document.querySelector(".info-section__loop-list");
